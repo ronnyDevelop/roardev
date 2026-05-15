@@ -23,16 +23,16 @@ const formattedDate = post.data.pubDate.toLocaleDateString('es-ES', {
 <BaseLayout title={`${post.data.title} | Blog`}>
   <article class="py-8">
     <header class="mb-8">
-      <a href="/blog" class="text-primary-600 hover:underline mb-4 inline-block">
+      <a href="/blog" class="text-purple-400 hover:underline mb-4 inline-block">
         ← Volver al blog
       </a>
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">{post.data.title}</h1>
+      <h1 class="text-4xl font-bold text-white mb-4">{post.data.title}</h1>
       <div class="flex items-center gap-4 text-gray-500">
         <time>{formattedDate}</time>
         {post.data.tags && (
           <div class="flex gap-2">
             {post.data.tags.map((tag) => (
-              <span class="text-sm">#{tag}</span>
+              <span class="text-sm text-purple-400">#{tag}</span>
             ))}
           </div>
         )}
@@ -49,26 +49,26 @@ const formattedDate = post.data.pubDate.toLocaleDateString('es-ES', {
   .prose-content h1 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #111827;
+    color: #e2e8f0;
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
   .prose-content h2 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #111827;
+    color: #e2e8f0;
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
   }
   .prose-content h3 {
     font-size: 1.125rem;
     font-weight: 600;
-    color: #111827;
+    color: #e2e8f0;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
   .prose-content p {
-    color: #4b5563;
+    color: #cbd5e1;
     margin-bottom: 1rem;
     line-height: 1.625;
   }
@@ -77,31 +77,31 @@ const formattedDate = post.data.pubDate.toLocaleDateString('es-ES', {
     padding-left: 1.5rem;
   }
   .prose-content li {
-    color: #4b5563;
+    color: #cbd5e1;
     margin-bottom: 0.5rem;
   }
   .prose-content code {
-    background-color: #f3f4f6;
+    background-color: #1e1b4b;
     padding: 0.125rem 0.5rem;
     border-radius: 0.25rem;
     font-size: 0.875rem;
     font-family: monospace;
-    color: #2563eb;
+    color: #c4b5fd;
   }
   .prose-content pre {
-    background-color: #111827;
-    color: #f3f4f6;
+    background-color: #0f172a;
+    color: #e2e8f0;
     padding: 1rem;
     border-radius: 0.5rem;
     overflow-x: auto;
     margin-bottom: 1rem;
   }
   .prose-content a {
-    color: #2563eb;
+    color: #a78bfa;
     text-decoration: underline;
   }
   .prose-content strong {
     font-weight: 600;
-    color: #111827;
+    color: #f1f5f9;
   }
 </style>

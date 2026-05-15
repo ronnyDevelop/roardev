@@ -4,54 +4,54 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Sobre mí | Mi Portafolio">
   <section class="py-8">
-    <h1 class="text-4xl font-bold text-gray-900 mb-8">Sobre mí</h1>
+    <h1 class="text-4xl font-bold text-white mb-8">Sobre mí</h1>
 
-    <div class="bg-white rounded-lg border border-gray-200 p-8 mb-8">
-      <h2 class="text-2xl font-semibold text-gray-900 mb-4">Breve historia</h2>
-      <p class="text-gray-600 leading-relaxed mb-4">
+    <div class="bg-white/10 rounded-lg border border-purple-500/30 p-8 mb-8 backdrop-blur-sm">
+      <h2 class="text-2xl font-semibold text-white mb-4">Breve historia</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">
         Soy un desarrollador Full Stack con experiencia en el desarrollo de aplicaciones web modernas.
         También trabajo con Inteligencia Artificial Generativa, creando soluciones innovadoras que aprovechan
         los últimos avances en ML y IA.
       </p>
-      <p class="text-gray-600 leading-relaxed">
+      <p class="text-gray-300 leading-relaxed">
         Me apasiona aprender nuevas tecnologías y compartir conocimientos con la comunidad.
       </p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 mb-8">
-      <div class="bg-white rounded-lg border border-gray-200 p-6">
-        <h3 class="text-xl font-semibold text-gray-900 mb-4">Skills técnicos</h3>
+      <div class="bg-white/10 rounded-lg border border-purple-500/30 p-6 backdrop-blur-sm">
+        <h3 class="text-xl font-semibold text-white mb-4">Skills técnicos</h3>
         <div class="flex flex-wrap gap-2">
           {["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "PostgreSQL", "MongoDB", "Docker", "AWS"].map((skill) => (
-            <span class="px-3 py-1 bg-primary-50 text-primary-700 rounded-full text-sm">
+            <span class="px-3 py-1 bg-purple-600/30 text-purple-300 rounded-full text-sm">
               {skill}
             </span>
           ))}
         </div>
       </div>
 
-      <div class="bg-white rounded-lg border border-gray-200 p-6">
-        <h3 class="text-xl font-semibold text-gray-900 mb-4">Educación</h3>
+      <div class="bg-white/10 rounded-lg border border-purple-500/30 p-6 backdrop-blur-sm">
+        <h3 class="text-xl font-semibold text-white mb-4">Educación</h3>
         <div class="space-y-4">
           <div>
-            <h4 class="font-medium text-gray-900">Carrera en Ciencias de la Computación</h4>
+            <h4 class="font-medium text-gray-200">Carrera en Ciencias de la Computación</h4>
             <p class="text-gray-500 text-sm">Universidad • 2018 - 2022</p>
           </div>
           <div>
-            <h4 class="font-medium text-gray-900">Cursos Online</h4>
+            <h4 class="font-medium text-gray-200">Cursos Online</h4>
             <p class="text-gray-500 text-sm">Udemy, Coursera, Platzi</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="bg-white rounded-lg border border-gray-200 p-6">
-      <h3 class="text-xl font-semibold text-gray-900 mb-4">Experiencia laboral</h3>
+    <div class="bg-white/10 rounded-lg border border-purple-500/30 p-6 backdrop-blur-sm">
+      <h3 class="text-xl font-semibold text-white mb-4">Experiencia laboral</h3>
       <div class="space-y-4">
         <div>
-          <h4 class="font-medium text-gray-900">Desarrollador Full Stack</h4>
+          <h4 class="font-medium text-gray-200">Desarrollador Full Stack</h4>
           <p class="text-gray-500 text-sm">Empresa • 2022 - Presente</p>
-          <p class="text-gray-600 mt-2">
+          <p class="text-gray-400 mt-2">
             Desarrollo y mantenimiento de aplicaciones web. Trabajo con React, Node.js y bases de datos PostgreSQL.
           </p>
         </div>
