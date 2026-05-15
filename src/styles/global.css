@@ -22,5 +22,6 @@ html {
 }
 
 body {
-  @apply bg-gray-50 text-gray-900;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8e0ff 100%);
+  min-height: 100vh;
 }
