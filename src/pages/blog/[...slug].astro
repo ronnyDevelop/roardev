@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formattedDate = post.data.pubDate.toLocaleDateString('es-ES', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<BaseLayout title={`${post.data.title} | Blog`}>
+  <article class="py-8">
+    <header class="mb-8">
+      <a href="/blog" class="text-primary-600 hover:underline mb-4 inline-block">
+        ← Volver al blog
+      </a>
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">{post.data.title}</h1>
+      <div class="flex items-center gap-4 text-gray-500">
+        <time>{formattedDate}</time>
+        {post.data.tags && (
+          <div class="flex gap-2">
+            {post.data.tags.map((tag) => (
+              <span class="text-sm">#{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    </header>
+
+    <div class="prose-content">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<style is:global>
+  .prose-content h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .prose-content h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-content h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose-content p {
+    color: #4b5563;
+    margin-bottom: 1rem;
+    line-height: 1.625;
+  }
+  .prose-content ul, .prose-content ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+  .prose-content li {
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+  }
+  .prose-content code {
+    background-color: #f3f4f6;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-family: monospace;
+    color: #2563eb;
+  }
+  .prose-content pre {
+    background-color: #111827;
+    color: #f3f4f6;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+  .prose-content a {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+  .prose-content strong {
+    font-weight: 600;
+    color: #111827;
+  }
+</style>
